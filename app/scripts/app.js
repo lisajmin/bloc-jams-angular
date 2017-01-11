@@ -9,15 +9,15 @@
         $stateProvider 
             .state('landing', {
                 url: '/',
-                templateUrl: '/template/landing.html'
+                templateUrl: '/templates/landing.html'
             })
             .state('album', {
                 url: '/album',
-                templateUrl: '/template/album.html'
+                templateUrl: '/templates/album.html'
             })
             .state('collection', {
                 url: '/collection',
-                templateUrl: '/template/collection.html'
+                templateUrl: '/templates/collection.html'
             });
     }
     angular
