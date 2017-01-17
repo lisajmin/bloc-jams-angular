@@ -163,18 +163,18 @@
     .player-bar .volume {
         display: block;
         margin: 0 auto;
-        padding: 0;
+        margin-top: 2rem;
         width: 100%;
         text-align: center;
     }
     
     .player-bar .main-controls,
     .player-bar .volume {
-        min-height: 3.5rem;
+        min-height: 1rem;
     }
     
     .player-bar .currently-playing {
-        min-height: 2.5rem;
+        min-height: 1rem;
     }
     
     .player-bar .artist-name,
@@ -183,6 +183,8 @@
     }
     
     .player-bar .currently-playing .artist-song-mobile {
+        width: 85%;
+        text-align: center;
         display: block;
     }
 }
