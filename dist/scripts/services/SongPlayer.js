@@ -98,6 +98,11 @@
                 setSong(song);
                 playSong(song);
                 
+            } else if (SongPlayer.currentSong === null) {
+                song = currentAlbum.songs[0];
+                setSong(song);
+                playSong(song);
+                
             } else if (SongPlayer.currentSong === song) {
                 if(currentBuzzObject.isPaused()) {
                     playSong(song);
@@ -125,7 +130,9 @@
             currentSongIndex--;
             
             if (currentSongIndex < 0) {
-                stopSong(SongPlayer.currentSong);
+                 var song = currentAlbum.songs[currentAlbum.songs.length-1];
+                setSong(song);
+                playSong(song)
             } else {
                 var song = currentAlbum.songs[currentSongIndex];
                 setSong(song);
@@ -142,7 +149,9 @@
             currentSongIndex++;
             
             if (currentSongIndex > (currentAlbum.songs.length-1)) {
-                stopSong(SongPlayer.currentSong);
+                var song = currentAlbum.songs[0];
+                setSong(song);
+                playSong(song);
             } else {
                 var song = currentAlbum.songs[currentSongIndex];
                 setSong(song);
@@ -160,16 +169,14 @@
                 currentBuzzObject.setTime(time);
             }
         };
-
+        
         /**
         * @function setVolume
         * @desc Set volume
         * @param {Number}
         */
         SongPlayer.setVolume = function(volume) {
-            if (currentBuzzObject) {
                 currentBuzzObject.setVolume(volume);
-            }
         };
         
         return SongPlayer;
